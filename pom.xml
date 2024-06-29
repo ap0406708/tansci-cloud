@@ -39,7 +39,7 @@
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <fastjson.version>1.2.62</fastjson.version>
         <nimbus-jose-jwt.version>9.1.1</nimbus-jose-jwt.version>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <jackson.version>2.13.1</jackson.version>
         <knife4j-spring-boot.version>3.0.3</knife4j-spring-boot.version>
         <redisson.version>3.17.5</redisson.version>

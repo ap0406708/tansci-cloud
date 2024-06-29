@@ -111,7 +111,7 @@ db.num=1
 ### Connect URL of DB:
 db.url.0=jdbc:mysql://127.0.0.1:3306/tansci_config?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
 db.user.0=root
-db.password.0=root
+db.password.0=12345678
 ```
 
 执行 `nacos-server-2.0.4/bin/startup.cmd` 即可启动 Nacos 。
@@ -144,6 +144,10 @@ java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 
 # linux
 nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -jar /usr/local/sentinel/sentinel-dashboard-1.8.3.jar &
+
+nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.3.jar > log-sentinel-0629-1.txt 2>&1 & 
+
+-Dsentinel.dashboard.auth.username=sentinel -Dsentinel.dashboard.auth.password=123456   加密码
 
 ```
 
@@ -352,7 +356,7 @@ store.db.dbType=mysql
 store.db.driverClassName=com.mysql.jdbc.Driver
 store.db.url=jdbc:mysql://127.0.0.1:3306/seata?useUnicode=true&rewriteBatchedStatements=true #修改为线上IP:PORT
 store.db.user=root #修改
-store.db.password=root #修改
+store.db.password=12345678 #修改
 store.db.minConn=5
 store.db.maxConn=30
 store.db.globalTable=global_table
@@ -459,6 +463,7 @@ seata:
 API 文档访问地址 http://网关ip:网关端口/doc.html
 
 例如：[http://127.0.0.1:9001/doc.html](http://127.0.0.1:9001/doc.html)
+Knife4j 接口文档  *******
 
 ## 登录认证
 

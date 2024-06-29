@@ -1,3 +1,9 @@
+NACOS-HOST: 192.168.137.130
+#NACOS-PORT: 8868
+REDIS-HOST: 192.168.137.130
+SENTINEL-HOST: 192.168.137.130
+MYSQL-HOST: 192.168.137.130
+
 server:
   port: 9003
   servlet:
@@ -41,7 +47,7 @@ spring:
   datasource:
     url: jdbc:mysql://${MYSQL-HOST:tansci-mysql}:${MYSQL-PORT:3306}/${MYSQL-DB:tansci_cloud}?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&autoReconnect=true&useSSL=false
     username: root
-    password: admin
+    password: 12345678
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       # 下面为连接池的补充设置，应用到上面所有数据源中

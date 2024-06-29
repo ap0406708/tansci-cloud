@@ -1,3 +1,7 @@
+NACOS-HOST: 192.168.137.130
+#NACOS-PORT: 8868
+REDIS-HOST: 192.168.137.130
+
 server:
   port: 9002
   servlet:
