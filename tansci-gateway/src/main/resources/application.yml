@@ -19,7 +19,7 @@ spring:
     nacos:
       discovery:
         server-addr: ${NACOS-HOST:tansci-nacos}:${NACOS-PORT:8848}
-        namespace: d01a5728-d581-438a-a0e8-e180a08f1e6d
+        namespace: #d01a5728-d581-438a-a0e8-e180a08f1e6d
     # 网关路由配置
     gateway:
       # 设置与服务注册发现组件结合，这样可以采用服务名的路由策略
@@ -57,7 +57,7 @@ spring:
     # Sentinel熔断器
     sentinel:
       transport:
-        port: 8719
+        port: 8720
         dashboard: ${SENTINEL-HOST:tansci-sentinel}:${SENTINEL-PORT:8858} # sentinel控制台
       eager: true  # 服务启动直接建立心跳连接
       datasource: # Sentinel使用Nacos存储规则
@@ -65,7 +65,7 @@ spring:
           nacos:
             server-addr: ${NACOS-HOST:tansci-nacos}:${NACOS-PORT:8848}
             dataId: ${spring.application.name}-flow-rules
-            namespace: d01a5728-d581-438a-a0e8-e180a08f1e6d
+            namespace: #d01a5728-d581-438a-a0e8-e180a08f1e6d
             data-type: json
             rule-type: flow
 

@@ -145,11 +145,16 @@ java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 # linux
 nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -jar /usr/local/sentinel/sentinel-dashboard-1.8.3.jar &
 
-nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.3.jar > log-sentinel-0629-1.txt 2>&1 & 
+两个8858 就看到有监控的8719程序
+nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8858 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.3.jar > log-sentinel-0701-1.txt 2>&1 & 
+
+不同端口 无看到有监控的8719程序
+nohup  java -Dserver.port=8858 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.3.jar > log-sentinel-0630-2.txt 2>&1 & 
 
 -Dsentinel.dashboard.auth.username=sentinel -Dsentinel.dashboard.auth.password=123456   加密码
 
 ```
+https://sentinelguard.io/zh-cn/docs/dashboard.html
 
 浏览器访问： [http://localhost:8080](http://localhost:8080)
 
@@ -410,6 +415,8 @@ metrics.exporterPrometheusPort=9898
 # linux
 cd /bin
 ./seata-server.sh
+
+./seata-server.sh -h 192.168.137.130   
 ```
 
 访问：[http://localhost:7091](http://localhost:7091)， `seata/seata`

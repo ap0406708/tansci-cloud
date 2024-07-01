@@ -18,7 +18,7 @@ spring:
     nacos:
       discovery:
         server-addr: ${NACOS-HOST:tansci-nacos}:${NACOS-PORT:8848}
-        namespace: d01a5728-d581-438a-a0e8-e180a08f1e6d
+        namespace: #d01a5728-d581-438a-a0e8-e180a08f1e6d
   redis:
     database: 2
     host: ${REDIS-HOST:tansci-redis}

@@ -20,10 +20,17 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   cloud:
+    inetutils:
+      # fixed Cannot determine local hostname  #not ok
+      #https://blog.csdn.net/shinexunmeng/article/details/124776110
+      #https://blog.csdn.net/lanwilliam/article/details/136216003
+      preferred-networks: 192.168.48.
+      #ignored-interfaces: 'VMware Network Adapter VMnet1'
     nacos:
       discovery:
         server-addr: ${NACOS-HOST:tansci-nacos}:${NACOS-PORT:8848}
-        namespace: d01a5728-d581-438a-a0e8-e180a08f1e6d
+        namespace: #d01a5728-d581-438a-a0e8-e180a08f1e6d
+        #networkInterface: '以太网适配器 VMware Network Adapter VMnet8'
     # Sentinel熔断器
     sentinel:
       transport:
@@ -35,7 +42,7 @@ spring:
           nacos:
             server-addr: ${NACOS-HOST:tansci-nacos}:${NACOS-PORT:8848}
             dataId: ${spring.application.name}-flow-rules
-            namespace: d01a5728-d581-438a-a0e8-e180a08f1e6d
+            namespace: #d01a5728-d581-438a-a0e8-e180a08f1e6d
             data-type: json
             rule-type: flow
   redis:
@@ -133,5 +140,9 @@ dubbo:
     timeout: 60000
   cloud:
   # 服务消费方订阅服务提供方的应用名称的列表，若需订阅多应用，使用 "," 分割。 不推荐使用默认值为 "*"，它将订阅所有应用。
+    # https://www.cnblogs.com/zyf-yxm/p/13740938.html  fixed
+    # Current application will subscribe all services(size:9) in registry, a lot of memory and CPU cycles may be used,
+    # thus it's strongly recommend you using the externalized property 'dubbo.cloud.subscribed-services' to specify the services
 #    subscribed-services:
+    subscribed-services: tansci-scheduled,tansci-auth,tansci-gateway
 
